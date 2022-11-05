@@ -2,16 +2,16 @@ package com.valdirluiz.app.votacao.transportlayers.dto;
 
 public class SalvarVotoDTO {
 
-    private String cpf;
+    private String cpfAssociado;
     private Boolean valor;
     private Long idSessao;
 
-    public String getCpf() {
-        return cpf;
+    public String getCpfAssociado() {
+        return cpfAssociado;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpfAssociado(String cpfAssociado) {
+        this.cpfAssociado = cpfAssociado;
     }
 
     public Boolean getValor() {

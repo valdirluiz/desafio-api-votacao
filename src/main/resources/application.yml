@@ -11,6 +11,10 @@ spring:
   liquibase:
     change-log: db/changelog/changelog-master.yml
 
+service:
+  validador-cpf:
+    url: https://user-info.herokuapp.com
+
 server:
   port: 5000
   servlet:

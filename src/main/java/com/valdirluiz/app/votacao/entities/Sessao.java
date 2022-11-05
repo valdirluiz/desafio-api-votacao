@@ -84,4 +84,10 @@ public class Sessao {
         this.dataValidade = LocalDateTime.now().plusMinutes(this.validadeMinutos == null || this.validadeMinutos == 0
                 ? 1 : this.validadeMinutos);
     }
+
+    public void validaExpiracao() {
+        if(LocalDateTime.now().isAfter(dataValidade)){
+            throw new BadRequestException("Sessão expirada");
+        }
+    }
 }
