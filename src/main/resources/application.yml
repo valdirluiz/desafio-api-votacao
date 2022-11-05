@@ -1,4 +1,8 @@
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_8193ca24ef99e61
@@ -6,3 +10,9 @@ spring:
     password: e1a76f28
   liquibase:
     change-log: db/changelog/changelog-master.yml
+
+server:
+  port: 5000
+  servlet:
+    context-path: /api-votacao
+

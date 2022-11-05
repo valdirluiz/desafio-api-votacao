@@ -12,6 +12,7 @@ databaseChangeLog:
               -  column:
                    name: ID_PAUTA
                    type: BIGINT
+                   autoIncrement: true
                    constraints:
                      primaryKey: true
               -  column:
