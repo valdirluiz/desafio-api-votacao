@@ -14,11 +14,11 @@ import java.util.function.Supplier;
 @Service
 public class VotoUseCase {
 
+    public static final String ABLE_TO_VOTE = "ABLE_TO_VOTE";
     private static Logger logger = LoggerFactory.getLogger(VotoUseCase.class);
 
     private final SessaoRepository sessaoRepository;
     private final CpfRepository cpfRepository;
-
     private final VotoRepository votoRepository;
 
     public VotoUseCase(SessaoRepository sessaoRepository, CpfRepository cpfRepository, VotoRepository votoRepository) {
@@ -49,7 +49,7 @@ public class VotoUseCase {
             }
 
             var statusCpf = cpfRepository.consultaCpf(voto.getCpfAssociado());
-            if(!"ABLE_TO_VOTE".equals(statusCpf.getStatus())){
+            if(!ABLE_TO_VOTE.equals(statusCpf.getStatus())){
                 throw new BadRequestException("CPF não habilitado para votar");
             }
         } catch (BadRequestException e){
