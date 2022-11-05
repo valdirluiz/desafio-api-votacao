@@ -15,7 +15,6 @@ public class PautaUseCase {
 
     private static Logger logger = LoggerFactory.getLogger(PautaUseCase.class);
 
-
     private final PautaRepository repository;
 
     public PautaUseCase(PautaRepository repository) {
