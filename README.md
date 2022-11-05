@@ -24,5 +24,4 @@ A arquitetura escolhida para desenvolver o sistema foi a hexagonal, com algumas 
 
 Para documentar a API foi utilizada a ferramenta swagger, ela pode ser acessada da seguinte forma:
 
-http://localhost:5000/api-votacao/swagger-ui/
-
+https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/swagger-ui/

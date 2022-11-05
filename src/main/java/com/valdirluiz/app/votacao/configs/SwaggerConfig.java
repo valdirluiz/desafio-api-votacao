@@ -14,6 +14,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.util.StringUtils;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
@@ -26,8 +27,12 @@ public class SwaggerConfig {
 
     @Bean
     public Docket api() {
+        var apiInfo = new ApiInfo(
+                "Api de votação", "Serviços responsáveis pelo gerenciamento de votação",
+                "v1.0.0", "", "Valdir Luiz Hofer", "", "");
         return new Docket(DocumentationType.SWAGGER_2)
                 .useDefaultResponseMessages(false)
+                .apiInfo(apiInfo)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.valdirluiz.app.votacao.transportlayers"))
                 .paths(PathSelectors.any())
