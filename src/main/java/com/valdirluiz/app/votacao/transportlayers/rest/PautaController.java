@@ -1,4 +1,4 @@
-package com.valdirluiz.app.votacao.transportlayers;
+package com.valdirluiz.app.votacao.transportlayers.rest;
 
 import com.valdirluiz.app.votacao.configs.GeneralResponse;
 import com.valdirluiz.app.votacao.entities.Pauta;
