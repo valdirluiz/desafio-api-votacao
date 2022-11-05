@@ -90,6 +90,12 @@ class SessaoUseCaseTest {
         when(sessaoRepository.buscarSessao(anyLong())).thenReturn(Optional.of(Factory.getSessao()));
         var sessao  = sessaoUseCase.buscarSessao(1l);
         assertTrue(Objects.nonNull(sessao));
+        assertTrue(Objects.nonNull(sessao.getApuracao()));
+        assertTrue(Objects.nonNull(sessao.getApuracao().getVotosNao()));
+        assertTrue(Objects.nonNull(sessao.getApuracao().getVotosSim()));
+        assertTrue(Objects.nonNull(sessao.getNome()));
+        assertTrue(Objects.nonNull(sessao.getValidadeMinutos()));
+        assertTrue(Objects.nonNull(sessao.getValidadeMinutos()));
     }
 
     @Test

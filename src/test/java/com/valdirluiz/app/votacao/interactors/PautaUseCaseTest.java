@@ -69,6 +69,8 @@ class PautaUseCaseTest {
         when(pautaRepository.buscarPauta(anyLong())).thenReturn(Optional.of(Factory.getPauta()));
         var pauta  = pautaUseCase.buscarPauta(1l);
         assertTrue(Objects.nonNull(pauta));
+        assertTrue(Objects.nonNull(pauta.getApuracao()));
+        assertTrue(Objects.nonNull(pauta.getNome()));
     }
 
     @Test

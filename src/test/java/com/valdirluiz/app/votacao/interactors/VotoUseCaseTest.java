@@ -38,7 +38,7 @@ public class VotoUseCaseTest {
         when(sessaoRepository.buscarSessao(any())).thenReturn(Optional.of(sessao));
         when(cpfRepository.consultaCpf(anyString())).thenReturn(Factory.statusCpf());
         doNothing().when(votoRepository).salvarVoto(any());
-        assertDoesNotThrow(()-> votoUseCase.computarVoto(voto));
+        votoUseCase.computarVoto(voto);
     }
 
     @Test
