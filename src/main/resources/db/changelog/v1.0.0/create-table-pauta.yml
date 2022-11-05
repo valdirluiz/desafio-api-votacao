@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - preConditions:
+      onFail: HALT
+      onError: HALT
+  - changeSet:
+      id: create-table-pauta
+      author: valdir.luiz
+      changes:
+        - createTable:
+            tableName: PAUTA
+            columns:
+              -  column:
+                   name: ID_PAUTA
+                   type: BIGINT
+                   constraints:
+                     primaryKey: true
+              -  column:
+                   name: NOME_PAUTA
+                   type: VARCHAR(255)
