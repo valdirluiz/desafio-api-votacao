@@ -30,6 +30,9 @@ public class Sessao {
     @JsonIgnore
     private Integer validadeMinutos;
 
+    @Transient
+    private Apuracao apuracao;
+
     public Long getId() {
         return id;
     }
@@ -68,6 +71,14 @@ public class Sessao {
 
     public void setValidadeMinutos(Integer validadeMinutos) {
         this.validadeMinutos = validadeMinutos;
+    }
+
+    public Apuracao getApuracao() {
+        return apuracao;
+    }
+
+    public void setApuracao(Apuracao apuracao) {
+        this.apuracao = apuracao;
     }
 
     public void validarCampos() {

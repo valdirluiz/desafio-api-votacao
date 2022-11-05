@@ -8,4 +8,6 @@ public interface VotoRepository {
 
     void salvarVoto(Voto voto);
     Optional<Voto> findByCpfAssociadoAndIdPauta(String cpfAssociado, Long idPauta);
+    Long countByValorAndPauta(Boolean valor, Long idPauta);
+    Long countByValorAndSessao(Boolean valor, Long idSessao);
 }

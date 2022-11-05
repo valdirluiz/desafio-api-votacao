@@ -32,6 +32,7 @@ public class VotoUseCase {
         voto.validarCampos();
         var sessao = sessaoRepository.buscarSessao(voto.getIdSessao())
                 .orElseThrow(sessaoNaoLocalizada(voto));
+        voto.setIdPauta(sessao.getIdPauta());
         sessao.validaExpiracao();
         validaCpf(voto);
         votoRepository.salvarVoto(voto);

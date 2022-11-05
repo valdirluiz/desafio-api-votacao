@@ -8,4 +8,8 @@ import java.util.Optional;
 public interface VotoJpaRepository extends JpaRepository<Voto, Long> {
 
     Optional<Voto> findByCpfAssociadoAndIdPauta(String cpfAssociado, Long idPauta);
+
+    Long countByIdPautaAndValor(Long idPauta, Boolean valor);
+
+    Long countByIdSessaoAndValor(Long idSessao, Boolean valor);
 }

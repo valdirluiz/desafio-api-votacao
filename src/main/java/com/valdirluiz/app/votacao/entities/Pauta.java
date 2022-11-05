@@ -15,6 +15,8 @@ public class Pauta {
     @Column(name = "nome_pauta")
     private String nome;
 
+    @Transient
+    private Apuracao apuracao;
     public Long getId() {
         return id;
     }
@@ -29,6 +31,14 @@ public class Pauta {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Apuracao getApuracao() {
+        return apuracao;
+    }
+
+    public void setApuracao(Apuracao apuracao) {
+        this.apuracao = apuracao;
     }
 
     public void validarCampos() {

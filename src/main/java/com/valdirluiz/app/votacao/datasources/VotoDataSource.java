@@ -25,4 +25,14 @@ public class VotoDataSource implements VotoRepository {
     public Optional<Voto> findByCpfAssociadoAndIdPauta(String cpfAssociado, Long idPauta) {
         return repository.findByCpfAssociadoAndIdPauta(cpfAssociado, idPauta);
     }
+
+    @Override
+    public Long countByValorAndPauta(Boolean valor, Long idPauta) {
+        return repository.countByIdPautaAndValor(idPauta, valor);
+    }
+
+    @Override
+    public Long countByValorAndSessao(Boolean valor, Long idSessao) {
+        return repository.countByIdSessaoAndValor(idSessao, valor);
+    }
 }

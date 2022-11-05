@@ -1,10 +1,11 @@
 package com.valdirluiz.app.votacao.interactors;
 
-import com.valdirluiz.app.votacao.entities.Pauta;
+import com.valdirluiz.app.votacao.entities.Apuracao;
 import com.valdirluiz.app.votacao.entities.Sessao;
 import com.valdirluiz.app.votacao.exceptions.BadRequestException;
 import com.valdirluiz.app.votacao.repositories.PautaRepository;
 import com.valdirluiz.app.votacao.repositories.SessaoRepository;
+import com.valdirluiz.app.votacao.repositories.VotoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -18,10 +19,12 @@ public class SessaoUseCase {
 
     private final SessaoRepository sessaoRepository;
     private final PautaRepository pautaRepository;
+    private final VotoRepository votoRepository;
 
-    public SessaoUseCase(SessaoRepository sessaoRepository, PautaRepository pautaRepository) {
+    public SessaoUseCase(SessaoRepository sessaoRepository, PautaRepository pautaRepository, VotoRepository votoRepository) {
         this.sessaoRepository = sessaoRepository;
         this.pautaRepository = pautaRepository;
+        this.votoRepository = votoRepository;
     }
 
     public Sessao salvarSessao(Sessao sessao){
@@ -36,17 +39,27 @@ public class SessaoUseCase {
 
     public List<Sessao> buscarSessoes() {
         logger.info("Recuperando pautas da base de dados...");
-        return sessaoRepository.buscarSessoes();
+        var sessoes = sessaoRepository.buscarSessoes();
+        sessoes.forEach(sessao -> setApuracao(sessao));
+        return sessoes;
     }
 
     public Sessao buscarSessao(Long id) {
         logger.info("Recuperando pauta da base de dados com o id {}", id);
-        var sessao = sessaoRepository.buscarSessao(id);
-        if(sessao.isEmpty()){
+        var sessaoOptional = sessaoRepository.buscarSessao(id);
+        if(sessaoOptional.isEmpty()){
             logger.warn("Pauta com o id {} não localizada", id);
             throw new BadRequestException(String.format("Pauta com o id %d não localizada", id));
         }
-        return sessao.get();
+        var sessao =  sessaoOptional.get();
+        setApuracao(sessao);
+        return sessao;
+    }
+
+    private void setApuracao(Sessao sessao) {
+        var votosSim = votoRepository.countByValorAndSessao(true, sessao.getId());
+        var votosNao = votoRepository.countByValorAndSessao(false, sessao.getId());
+        sessao.setApuracao(new Apuracao(votosSim, votosNao));
     }
 
 }
