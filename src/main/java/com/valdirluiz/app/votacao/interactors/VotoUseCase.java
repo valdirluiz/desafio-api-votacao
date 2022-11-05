@@ -28,13 +28,14 @@ public class VotoUseCase {
     }
 
     public void computarVoto(Voto voto){
-        logger.info("Iniciando processo de computação de voto");
+        logger.info("Iniciando processo de computação de voto: ", voto);
         voto.validarCampos();
         var sessao = sessaoRepository.buscarSessao(voto.getIdSessao())
                 .orElseThrow(sessaoNaoLocalizada(voto));
         sessao.validaExpiracao();
         validaCpf(voto);
         votoRepository.salvarVoto(voto);
+        logger.info("Voto computado com sucesso: {}", voto);
     }
 
     private void validaCpf(Voto voto) {

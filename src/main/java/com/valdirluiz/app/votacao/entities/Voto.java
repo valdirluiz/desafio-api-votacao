@@ -80,4 +80,15 @@ public class Voto {
             throw new BadRequestException("É obrigatório informar o valor do voto");
         }
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", cpfAssociado='" + cpfAssociado + '\'' +
+                ", valor=" + valor +
+                ", idSessao=" + idSessao +
+                ", idPauta=" + idPauta +
+                '}';
+    }
 }
