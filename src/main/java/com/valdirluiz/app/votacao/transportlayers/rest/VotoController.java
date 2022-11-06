@@ -31,7 +31,7 @@ public class VotoController {
             @ApiResponse(code = 400, message = "Falha de negócio", response = GeneralResponse.class),
             @ApiResponse(code = 500, message = "Falha inesperada", response = GeneralResponse.class),
     })
-    public ResponseEntity<?> salvarSessao(@RequestBody SalvarVotoDTO voto){
+    public ResponseEntity<?> salvarVoto(@RequestBody SalvarVotoDTO voto){
         this.votoUseCase.computarVoto(VotoMapper.INSTANCE.map(voto));
         return ResponseEntity.noContent().build();
     }

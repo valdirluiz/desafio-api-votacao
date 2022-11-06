@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ValidadorCpfClient {
 
     @GetMapping("/users/{cpf}")
-    CpfStatus consultarStatus(@PathVariable String cpf);
+    CpfStatus consultarStatus(@PathVariable("cpf") String cpf);
 }
