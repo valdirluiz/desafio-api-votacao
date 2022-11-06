@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "91b5a743-5365-4d4f-88d7-458cd5f6da1d",
+		"name": "valdirluiz-desafio-api-votacao",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar todas as pautas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/pautas",
+					"protocol": "https",
+					"host": [
+						"valdirluiz-desafio-votacao",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-votacao",
+						"pautas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar pauta por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/pautas/4",
+					"protocol": "https",
+					"host": [
+						"valdirluiz-desafio-votacao",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-votacao",
+						"pautas",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar pauta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"teste postman\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/pautas",
+					"protocol": "https",
+					"host": [
+						"valdirluiz-desafio-votacao",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-votacao",
+						"pautas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar todas as sessões",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/sessoes",
+					"protocol": "https",
+					"host": [
+						"valdirluiz-desafio-votacao",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-votacao",
+						"sessoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar sessão por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/sessoes/4",
+					"protocol": "https",
+					"host": [
+						"valdirluiz-desafio-votacao",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-votacao",
+						"sessoes",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar sessão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"idPauta\": 4,\n  \"nome\": \"sessao postman\",\n  \"validadeMinutos\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/sessoes",
+					"protocol": "https",
+					"host": [
+						"valdirluiz-desafio-votacao",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-votacao",
+						"sessoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar votos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cpfAssociado\": \"23142437061\",\n  \"idSessao\": 64,\n  \"valor\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/votos",
+					"protocol": "https",
+					"host": [
+						"valdirluiz-desafio-votacao",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-votacao",
+						"votos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

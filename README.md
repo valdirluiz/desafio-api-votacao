@@ -22,6 +22,8 @@ ou se preferir pode acessar o mesmo hospedado na nuvem em:
 
 https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/swagger-ui/
 
+Os testes podem serem feitos via swagger (links acima) ou para facilitar pode se usar a collection do postman`valdirluiz-desafio-api-votacao.postman_collection.json` da raiz do projeto.
+
 
 ## Escopo
 
