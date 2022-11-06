@@ -1,6 +1,7 @@
 package com.valdirluiz.app.votacao.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.valdirluiz.app.votacao.exceptions.BadRequestException;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "sessao")
 @Access(AccessType.FIELD)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Sessao {
 
     @Id
