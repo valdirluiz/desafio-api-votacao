@@ -13,6 +13,7 @@ spring:
     password: e1a76f28
   liquibase:
     change-log: db/changelog/changelog-master.yml
+    enabled: false
 
 service:
   validador-cpf:
@@ -23,3 +24,19 @@ server:
   servlet:
     context-path: /api-votacao
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: false
+    prometheus:
+      enabled: true
