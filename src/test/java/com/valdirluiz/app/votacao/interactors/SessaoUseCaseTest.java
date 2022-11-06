@@ -95,7 +95,7 @@ class SessaoUseCaseTest {
         assertTrue(Objects.nonNull(sessao.getApuracao().getVotosSim()));
         assertTrue(Objects.nonNull(sessao.getNome()));
         assertTrue(Objects.nonNull(sessao.getValidadeMinutos()));
-        assertTrue(Objects.nonNull(sessao.getValidadeMinutos()));
+        assertTrue(Objects.nonNull(sessao.getDataValidade()));
     }
 
     @Test

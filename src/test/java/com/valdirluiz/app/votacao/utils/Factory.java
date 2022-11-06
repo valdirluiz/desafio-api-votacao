@@ -1,11 +1,16 @@
 package com.valdirluiz.app.votacao.utils;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.valdirluiz.app.votacao.entities.*;
+import com.valdirluiz.app.votacao.transportlayers.dto.SalvarVotoDTO;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Factory {
+
+    private final static ObjectMapper objectMapper = new ObjectMapper();
 
     public static Pauta getPauta(){
         var pauta = new Pauta();
@@ -51,5 +56,27 @@ public class Factory {
         voto.setIdSessao(1l);
         voto.setCpfAssociado("12312312311");
         return voto;
+    }
+
+    public static String getVotoAsJson() throws JsonProcessingException {
+        var dto = new SalvarVotoDTO();
+        dto.setCpfAssociado("12312312311");
+        dto.setValor(true);
+        dto.setIdSessao(1l);
+        return objectMapper.writeValueAsString(dto);
+    }
+
+    public static String getSessaoAsJson() throws JsonProcessingException {
+        var sessao = new Sessao();
+        sessao.setIdPauta(1l);
+        sessao.setValidadeMinutos(1);
+        sessao.setNome("teste");
+        return objectMapper.writeValueAsString(sessao);
+    }
+
+    public static String getPautaAsJson() throws JsonProcessingException {
+        var pauta = new Pauta();
+        pauta.setNome("nome");
+        return objectMapper.writeValueAsString(pauta);
     }
 }
