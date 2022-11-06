@@ -67,8 +67,9 @@ Para garantir a qualidade do sistema e evitar possíveis bugs foram implementado
 
 Com o objetivo de monitorar a aplicação foram disponibilizados dois serviços:
 
-- [actuator/health](https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/actuator): Pode ser utilizado para fazer prova de vida da aplicação;
-- 
+- [actuator/health](https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/actuator/health): Pode ser utilizado para fazer prova de vida da aplicação;
+- [actuator/prometheus](https://valdirluiz-desafio-votacao.herokuapp.com/api-votacao/actuator/prometheus): Pode ser utilizado para coletar métricas da jvm e enviar para uma base de dados prometheus fazendo uma integração com o grafana por exemplo;
+
 
 ## Principais tecnologias utilizadas
 
