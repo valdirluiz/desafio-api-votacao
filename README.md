@@ -38,6 +38,7 @@ Este projeto consiste em uma API de votação, tendo como principais funcinalida
 - Criação de testes unitários
 - Log das entradas e saidas http
 - Configurações de Observability
+- Publicação da aplicação em uma cloud
 
 ## Arquitetura
 
